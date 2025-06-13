@@ -38,13 +38,13 @@ function SignUp() {
   };
 
   return (
-    <div id="form">
-	<div id="signUp" >
+  <div className="form">
+	<div className="signUp" >
     <form onSubmit={handleSubmit} noValidate>
       <h2>Sign Up</h2>
 
       <div>
-        <label htmlFor="name">Name*</label><br/>
+        <label htmlFor="name">Name<b style={{ color: 'red' }}>*</b></label><br/>
         <input
           type="text"
           id="name"
@@ -56,7 +56,7 @@ function SignUp() {
       </div>
 
       <div>
-        <label htmlFor="email">Email*</label><br/>
+        <label htmlFor="email">Email<b style={{ color: 'red' }}>*</b></label><br/>
         <input
           type="email"
           id="email"
@@ -64,11 +64,12 @@ function SignUp() {
           value={form.email}
           onChange={handleChange}
         />
+        <button type="button" onclick="sendVerificationEmail()">Verify</button>
         {errors.email && <div style={{ color: 'red' }}>{errors.email}</div>}
       </div>
 
       <div>
-        <label htmlFor="phone">Phone*</label><br/>
+        <label htmlFor="phone">Phone<b style={{ color: 'red' }}>*</b></label><br/>
         <input
           type="text"
           id="phone"
@@ -80,7 +81,7 @@ function SignUp() {
       </div>
 
       <div>
-        <label htmlFor="password">Password*</label><br/>
+        <label htmlFor="password">Password<b style={{ color: 'red' }}>*</b></label><br/>
         <input
           type="password"
           id="password"
@@ -101,6 +102,17 @@ function SignUp() {
           onChange={handleChange}
         />
       </div>
+      <div>
+        <label htmlFor="agree">
+          <input type="checkbox" id="agree" />
+          {' '}Yes, I agree to{' '}
+          <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">
+            Terms & Conditions
+          </a>
+          <b style={{ color: 'red' }}>*</b>
+        </label>
+      </div>
+      
     
       <button type="submit">Submit</button>
     </form>

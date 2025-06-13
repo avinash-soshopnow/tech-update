@@ -1,5 +1,6 @@
+
 .form {
-    background-image: url('img/signUpbg.jpg'); /* URL of the background image */
+    background-image: url('../assets/img/signUp.jpg'); /* URL of the background image */
     background-size: cover; /* Adjust the size of the background image */
     background-position: center; /* Position the background image */
     background-attachment: fixed;
