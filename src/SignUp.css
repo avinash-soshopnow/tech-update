@@ -1,71 +1,64 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden; 
+}
 
 .form {
-    background-image: url('../assets/img/signUp.jpg'); /* URL of the background image */
-    background-size: cover; /* Adjust the size of the background image */
-    background-position: center; /* Position the background image */
-    background-attachment: fixed;
-    margin: 0px;
-    padding-top: 50px;
-    height: 900px;
-    width: 100%;
-  
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #8e948e;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 	.signUp{
+  padding-top: 50px;
 	padding:20px;
-	padding-left:30px;
-	margin-left:350px;
+	padding-left:80px;
+	margin-left:450px;
 	overflow-y: auto;
-	max-width:800px;
-	background-color:transperant;
+	max-width:500px;
+	background-color:white;
 	background-size: cover;
-	border-radius: 8px;
-	box-shadow: 10px 5px 15px;
-	}
-	#name{
-	background-image: url('imgfolder/user.png');
-	}
-	#email{
-	background-image: url('imgfolder/email.png');
-	}
-	#phone{
-	background-image: url('imgfolder/phone.png');
-	}
-	#userName
-	{
-	background-image: url('imgfolder/user.png');
-	}
-	#password{
-	background-image: url('imgfolder/password.png');
+	border-radius: 1px;
+	
 	}
 	label{
+  font-weight: 600;
 	font-size:20px;
-	padding:10px;
+	padding-left:0px;
+  color: rgb(79, 77, 77);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	}
 	 p{
   	color:red;
   	text-align:center;
   	}
 	
-	input[type="text"], input[type="password"],input[type="submit"],input[type="email"],select[type="option"],input[type="file"]{
+	input[type="text"], input[type="password"],input[type="submit"],input[type="email"]{
     font-size:20px;
     width: 350px;
     padding: 10px;
-    padding-left:50px;
+    padding-left:20px;
     padding-right:20px;
     margin-top: 15px;
     margin-bottom: 10px;
-    border-radius: 10px;
-    border: 2px solid #ccc;
-    box-sizing: border-box;
-    box-shadow: 10px 5px 15px grey;
-    background-size: 30px; /* Adjust the size of the icon */
-    background-repeat: no-repeat;
-    background-position: 10px center; /* Adjust the position of the icon */
-
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+    color: black;
   }
-  button[type="button"]{
+  button[type="submit"] {
     font-size:20px;
-    width: 70px;
+    width: 190px;
     padding: 10px;
     padding-left:10px;
     padding-right:10px;
@@ -77,16 +70,41 @@
     box-shadow: 10px 5px 15px grey;
     background-size: 30px; /* Adjust the size of the icon */
     background-repeat: no-repeat;
-    background-color: #90D6FF;
+    background-color: #06b53b;
     background-position: 10px center; /* Adjust the position of the icon */
 
   }
+  button[type="button"] {
+    color:rgb(79, 77, 77);
+    font-size:20px;
+    width: 90px;
+    padding: 10px;
+    padding-left:10px;
+    padding-right:10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-size: 30px; /* Adjust the size of the icon */
+    background-repeat: no-repeat;
+    background-color: #c4cfc7;
+    background-position: 10px center; /* Adjust the position of the icon */
 
-  #already_acc{
-  	margin-left: 50px;
-  	margin-right: 50px;
   }
-   #signword{
-  margin-right:50px;
-  font-size:25px;
+  h2{
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
   }
+  h6{
+    padding-bottom: -20px;
+    color: black;
+    font-size: 15px;
+  }
+  .starClr{
+    color: red;
+  }
+  input[type="checkbox"]{
+    background-color:aliceblue;
+  }
+      

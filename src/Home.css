@@ -1,0 +1,28 @@
+html, body {
+  
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden; 
+}
+.home{
+  
+  padding-bottom: 50px;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #8e948e;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.homeText{
+    color: black;
+    padding-left: 20px;
+}
+.signUpLink{
+    text-align: right;
+    padding-right: 50px;
+    font-size: 20px;
+    text-decoration:underline;
+    padding-top: 20px;
+}

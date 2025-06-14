@@ -7,6 +7,7 @@ function SignUp() {
     phone: '',
     password: '',
     referral: '',
+    agree: '',
   });
   const [errors, setErrors] = useState({});
 
@@ -24,6 +25,8 @@ function SignUp() {
       errs.phone = 'Valid 10-digit phone number required';
     if (form.password.length < 8)
       errs.password = 'Password must be at least 8 characters';
+    if (!form.agree)
+      errs.agree = 'You must agree before SignUp';
     return errs;
   };
 
@@ -39,57 +42,61 @@ function SignUp() {
 
   return (
   <div className="form">
-	<div className="signUp" >
+	  <div className="signUp" >
     <form onSubmit={handleSubmit} noValidate>
       <h2>Sign Up</h2>
-
+      <h6><b className='starClr'>*</b>indicates required field</h6>
       <div>
-        <label htmlFor="name">Name<b style={{ color: 'red' }}>*</b></label><br/>
+        <label htmlFor="name">Name<b className='starClr'>*</b></label><br/>
         <input
           type="text"
           id="name"
           name="name"
           value={form.name}
           onChange={handleChange}
+          placeholder="User Name"
         />
-        {errors.name && <div style={{ color: 'red' }}>{errors.name}</div>}
+        {errors.name && <div className='starClr'>{errors.name}</div>}
       </div>
 
       <div>
-        <label htmlFor="email">Email<b style={{ color: 'red' }}>*</b></label><br/>
+        <label htmlFor="email">Email<b className='starClr'>*</b></label><br/>
         <input
           type="email"
           id="email"
           name="email"
           value={form.email}
           onChange={handleChange}
+          placeholder="Email Address"
         />
         <button type="button" onclick="sendVerificationEmail()">Verify</button>
-        {errors.email && <div style={{ color: 'red' }}>{errors.email}</div>}
+        {errors.email && <div className='starClr'>{errors.email}</div>}
       </div>
 
       <div>
-        <label htmlFor="phone">Phone<b style={{ color: 'red' }}>*</b></label><br/>
+        <label htmlFor="phone">Phone<b className='starClr'>*</b></label><br/>
         <input
           type="text"
           id="phone"
           name="phone"
           value={form.phone}
           onChange={handleChange}
+          placeholder="Phone Number"
         />
-        {errors.phone && <div style={{ color: 'red' }}>{errors.phone}</div>}
+        {errors.phone && <div className='starClr'>{errors.phone}</div>}
       </div>
 
       <div>
-        <label htmlFor="password">Password<b style={{ color: 'red' }}>*</b></label><br/>
+        <label htmlFor="password">Password<b className='starClr'>*</b></label><br/>
         <input
           type="password"
           id="password"
           name="password"
           value={form.password}
           onChange={handleChange}
+          placeholder="Password"
         />
-        {errors.password && <div style={{ color: 'red' }}>{errors.password}</div>}
+        {errors.password && <div className='starClr'>{errors.password}</div>}
       </div>
 
       <div>
@@ -100,21 +107,36 @@ function SignUp() {
           name="referral"
           value={form.referral}
           onChange={handleChange}
+          placeholder="Referral Code"
         />
       </div>
       <div>
-        <label htmlFor="agree">
-          <input type="checkbox" id="agree" />
-          {' '}Yes, I agree to{' '}
-          <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">
-            Terms & Conditions
-          </a>
-          <b style={{ color: 'red' }}>*</b>
-        </label>
-      </div>
+  <label htmlFor="agree">
+    <input
+      type="checkbox"
+      id="agree"
+      name="agree"
+      checked={form.agree}
+      onChange={(e) =>
+        setForm((prev) => ({
+          ...prev,
+          agree: e.target.checked
+        }))
+      }
+    />
+    {' '}Yes, I agree to{' '}
+    <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">
+      Terms & Conditions
+    </a>
+    <b className='starClr'>*</b>
+  </label>
+
+  {errors.agree && <div className='starClr'>{errors.agree}</div>}
+</div>
+
       
     
-      <button type="submit">Submit</button>
+      <button type="submit">SignUp</button>
     </form>
     </div>
     </div>
